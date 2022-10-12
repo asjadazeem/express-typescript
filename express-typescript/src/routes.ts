@@ -6,6 +6,7 @@ module.exports = function (app) {
     const response = await fetchUrl('https://www.boredapi.com/api/activity');
     const activity: Activity = await response.json();
 
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.send(activity);
   });
 

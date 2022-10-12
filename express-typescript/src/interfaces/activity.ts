@@ -1,5 +1,5 @@
 interface Activity {
-  activityName: string;
+  activity: string;
   type: string;
   participants: string;
   price: number;
