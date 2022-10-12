@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "lint": "eslint -c .eslintrc.js . --ext .ts"
   },
   "author": "",
   "license": "ISC",
@@ -17,11 +18,20 @@
     "@types/node": "^18.8.3",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^6.7.1",
+    "eslint": "^8.25.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.10",
+    "nodemon-webpack-plugin": "^4.8.1",
+    "prettier": "^2.7.1",
     "style-loader": "^2.0.0",
     "ts-loader": "^9.4.1",
-    "typescript": "^2.9.2",
+    "typescript": "^4.8.4",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.8"
   },
@@ -31,5 +41,6 @@
     "react-dom": "^18.2.0",
     "react-typescript": "^1.0.0",
     "webpack": "^5.74.0"
-  }
+  },
+  "proxy":"http://localhost:2999"
 }
