@@ -1,8 +1,9 @@
 const path = require("path");
 const webpack = require("webpack");
+const NodemonPlugin = require('nodemon-webpack-plugin'); // Ding
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./src/index.tsx",
     mode: "development",
     module: {
         rules: [
@@ -13,12 +14,17 @@ module.exports = {
                 options: { presets: ["@babel/env"] }
             },
             {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loader: 'ts-loader'
+            },
+            {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]
             }
         ]
     },
-    resolve: { extensions: ["*", ".js", ".jsx"] },
+    resolve: { extensions: ["*", ".js", ".jsx", '.tsx', '.ts'] },
     output: {
         path: path.resolve(__dirname, "dist/"),
         publicPath: "/dist/",
@@ -30,5 +36,5 @@ module.exports = {
         publicPath: "http://localhost:3000/dist/",
         hotOnly: true
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()]
+    plugins: []
 };
